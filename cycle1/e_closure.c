@@ -2,7 +2,7 @@
 
 int n, adj[20][20], visited[20];
 
-// DFS to find all states reachable via epsilon transitions
+
 void dfs(int state) {
     visited[state] = 1;
     for (int i = 1; i <= n; i++) {
@@ -25,7 +25,7 @@ int main() {
     printf("Enter transitions (format: from_state symbol to_state):\n");
     for (int i = 0; i < t; i++) {
         scanf("%d %c %d", &u, &sym, &v);
-        // Store only epsilon ('e' or 'E') transitions
+    
         if (sym == 'e' || sym == 'E') {
             adj[u][v] = 1;
         }
@@ -33,12 +33,12 @@ int main() {
 
     printf("\n--- e-closure of states ---\n");
     for (int i = 1; i <= n; i++) {
-        // Reset visited array for each state
+      
         for (int j = 1; j <= n; j++) {
             visited[j] = 0;
         }
 
-        dfs(i); // Find reachable states
+        dfs(i);
 
         printf("e-closure(q%d) = { ", i);
         for (int j = 1; j <= n; j++) {
