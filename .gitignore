@@ -1,0 +1,12 @@
+.vscode/
+*.yy.c
+*.tab.c
+*.tab.h
+*.exe
+
+cycle1/output/
+
+
+sub
+q2
+q3
